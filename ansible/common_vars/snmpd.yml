@@ -1,0 +1,8 @@
+---
+snmpd_syscontact: 'CSEC Exploit <contact@comptoirsecu.fr>'
+snmpd_communities: "{{ vault_snmpd_communities[env][location] }}"
+snmpd_location: "{{ site_locations[location] }}"
+
+site_locations:
+  ovh:
+    "539686@G102A19-GRA1 | OVH, Route de la Ferme Masson 59820 Gravelines, France"

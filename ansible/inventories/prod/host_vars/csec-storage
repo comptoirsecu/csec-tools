@@ -1,0 +1,45 @@
+---
+# Shorewall configuration
+manala_shorewall_config: {}
+  # IP_FORWARDING: 'On'
+
+manala_shorewall_configs:
+## ZONE POLICY #################################################################
+  - file: policy
+    config:
+      # From Firewall
+      - $FW: all   DROP
+
+      # From Internet
+      - net: all   DROP
+
+      # Default
+      - all: all   DROP info
+
+## INTERFACES CONFIG ###########################################################
+  - file: interfaces
+    config:
+      # ZONE:   INTERFACE  BROADCAST  OPTIONS
+      - net:    eth0       detect     tcpflags,routefilter,nosmurfs,logmartians
+
+## ZONE CONFIG #################################################################
+  - file: zones
+    config:
+      # ZONE:   TYPE       OPTIONS    IN         OUT
+      - fw:     firewall
+      - net:    ipv4
+
+## FIREWALL RULES ##############################################################
+  - file: rules
+    config:
+      # ACTION: SOURCE                        DEST        PROTO PORT (SPORT) (ORIGDEST)
+      # fw -> net
+      - ACCEPT: fw                            net         tcp   22,53,80,443
+      - ACCEPT: fw                            net         udp   53,123
+
+      # net -> fw
+      - ACCEPT: net                           fw          tcp   22
+      - ACCEPT: net                           fw          icmp
+      - ACCEPT: net                           fw          tcp   22
+      - ACCEPT: net                           fw          icmp
+# vim:ft=ansible:

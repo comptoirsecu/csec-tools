@@ -1,0 +1,51 @@
+---
+# This file contains default packages for all environnements
+install_packages:
+  Debian:
+    - aptitude
+    - curl
+    - dnsutils
+    - elinks
+    - git
+    - htop
+    - mailutils
+    - mlocate
+    - mtr-tiny
+    - nmap
+    # - open-vm-tools
+    - postfix
+    - python-apt
+    - screen
+    - tmux
+    - tree
+    - tzdata
+    - unzip
+    - update-motd
+    - update-notifier-common
+    - vim
+    - vlan
+    - whois
+    - zip
+    - zsh
+
+  RedHat:
+    - bind-utils
+    - curl
+    - elinks
+    - git
+    - htop
+    # - ipa-client
+    # - mailx
+    - mlocate
+    - mtr
+    # - nmap
+    # - open-vm-tools
+    # - postfix
+    - screen
+    - tmux
+    - tree
+    - tzdata
+    - unzip
+    - vim
+    - zip
+    - zsh

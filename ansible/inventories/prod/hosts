@@ -1,0 +1,22 @@
+[all:vars]
+env=prod
+
+# PLATEFORME ###################################################################
+
+[hosting:children]
+ovh-hosting
+[hosting:vars]
+plateforme=hosting
+
+# DATACENTER ###################################################################
+
+[ovh:children]
+ovh-hosting
+[ovh:vars]
+location=ovh
+
+# PLATEFORME OVH ###############################################################
+
+[ovh-hosting]
+csec-storage    ansible_host=csec-storage.comptoirsecu.fr
+# ansible_port=22220

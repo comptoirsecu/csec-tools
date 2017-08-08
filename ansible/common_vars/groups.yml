@@ -1,0 +1,11 @@
+---
+local_groups:
+  csec-exploit:
+    gid: 4444
+    users:
+      - jganivet
+      - lsamain
+      - mhotonnier
+      - ypiolet
+
+deleted_local_groups: []

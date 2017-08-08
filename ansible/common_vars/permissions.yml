@@ -1,0 +1,9 @@
+---
+global_permissions:
+  prod:
+    hosting:
+      ssh_allow_groups:
+        - csec-exploit
+      sudoers:
+        - name: csec-exploit
+          ask_pass: no

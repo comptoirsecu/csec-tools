@@ -1,0 +1,23 @@
+- src: uZer.accounts
+  version: v1.0.0
+
+- src: uZer.network
+  version: v1.0.0
+
+- src: uZer.packages
+  version: v1.0.0
+
+- src: uZer.resolvconf
+  version: v1.0.0
+
+- src: uZer.shorewall
+  version: v1.0.0
+
+- src: uZer.snmpd
+  version: v1.0.0
+
+- src: uZer.timedate
+  version: v1.0.0
+
+- src: dev-sec.ssh-hardening
+  version: 4.3.0

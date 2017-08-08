@@ -1,0 +1,31 @@
+---
+- name: Deploy accounts on servers. Configures shell, home, groups
+  hosts: all
+  gather_facts: yes
+  become: yes
+  vars_files:
+    - common_vars/users.yml
+    - common_vars/groups.yml
+    - common_vars/packages.yml
+    - common_vars/snmpd.yml
+    - common_vars/permissions.yml
+    - vault.yml
+  roles:
+    - uZer.network
+    - uZer.accounts
+    - uZer.resolvconf
+    - uZer.timedate
+    - uZer.snmpd
+    - uZer.packages
+    - role: dev-sec.ssh-hardening
+      tags:
+        - ssh
+        - hardening
+
+- name: Deploy firwall configurations
+  hosts: hosting
+  gather_facts: yes
+  become: yes
+  roles:
+    - uZer.shorewall
+# vim:ft=ansible:

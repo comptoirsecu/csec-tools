@@ -1,0 +1,19 @@
+---
+dns_domain: comptoirsecu.fr
+
+dns_servers:
+  - '213.186.33.99'
+  - '8.8.8.8'
+  - '8.8.4.4'
+
+dns_searchs:
+  - "comptoirsecu.fr"
+
+ntp_servers:
+  - "0.fr.pool.ntp.org"
+  - "1.fr.pool.ntp.org"
+  - "2.fr.pool.ntp.org"
+  - "3.fr.pool.ntp.org"
+
+ssh_allow_groups: "{{ global_permissions[env][plateforme]['ssh_allow_groups'] | join(' ') }}"
+sudoers: "{{ global_permissions[env][plateforme]['sudoers'] }}"
