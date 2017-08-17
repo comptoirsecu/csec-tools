@@ -48,6 +48,8 @@ local_users:
     uid: 4001
     firstname: Morgan
     lastname: Hotonnier
+    pubkeys:
+      - 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDcJ/u0mUKccMthdjwfCnh3xCJ9rKhjugb4Wm2hIMyZX/Q4su8zWYwcRCRJFgqhfNHd6L59LOK7yXed6VFwtf7Xu2WFV3kpJpp6hqFbfjeCqxUUp4hqtqV1bRiK3Y2lL4RgUaAGnDhj3Qw3c+skN608Iy5HxTASnCL/Wcln1J5tFqyAHtSryIr/1vKOC0oCUIecLh63SY2kW+73tWlWm767odCovVWlmSw0xDfj3qXqPy3ywNjOaCrPWALhs6uEmhZgvlX2AKMphqsjM6iMnB7svdjkUBS78caW0UW45FdI0/3jrdJUgWUXi7WdCjd72oxY4ydmRgFBIXffhMFEVq/lpoAyRTauf2TFKZvw+0mMcWBOOg5jZEfoIaM5gso6KNMeFbiHYWaT+s1Mvs1tc9vU56RNkvN2/S+l7cdIVjDAxVXtxba7pIWA+MbqR0XWg8Chr38pSUyLh7DLh6fq/BXNQPH294uzRwMUkj8TPBjZGPnUKZG+XRQS/192ABKXnQ3sQ94BKervzhkf/MPU38R1Kxkunfxe5FYKes/EyLyYAp5B4jHD2XKDfDlZcg0AzOR7fvVG2Y73w5NCURGrto0qi5AV9ae/1edklTQ8EiZkYDlg0ua6K/1Ce43L2kZGUGVXLOiA526OKdfkjP6loN2coVjGS4cpphO+5jEY2vMEBw== astorz@gmail.com'
 
   ypiolet:
     uid: 4000
