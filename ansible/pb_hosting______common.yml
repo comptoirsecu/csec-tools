@@ -1,0 +1,11 @@
+---
+- name: Deploy docker and firewall
+  hosts: hosting
+  gather_facts: yes
+  become: yes
+  task:
+    - name: Launch NGINX container
+      docker_container:
+        # TODO
+
+# vim:ft=ansible:

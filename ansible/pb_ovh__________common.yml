@@ -1,0 +1,10 @@
+---
+- name: Deploy docker and firewall
+  hosts: ovh
+  gather_facts: yes
+  become: yes
+  roles:
+    - uZer.install-docker
+    - uZer.shorewall
+
+# vim:ft=ansible:

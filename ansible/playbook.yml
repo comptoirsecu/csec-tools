@@ -1,3 +1,10 @@
 ---
+# For all groups
 - include: pb_all__________common.yml
+
+# For OVH public hosts
+- include: pb_ovh__________common.yml
+
+# For web hosting servers
+# - include: pb_hosting______common.yml
 # vim:ft=ansible:

@@ -23,11 +23,4 @@
         - ssh
         - hardening
 
-- name: Deploy firewall configurations
-  hosts: hosting
-  gather_facts: yes
-  become: yes
-  roles:
-    - uZer.shorewall
-
 # vim:ft=ansible:

@@ -15,19 +15,20 @@ manala_shorewall_configs:
       # From Internet
       - net:  all   DROP
 
-      # Default
-      - all:  all   DROP info
-
       # From Docker
       - dock: $FW   REJECT
       - dock: all   ACCEPT
+
+      # Default
+      - all:  all   DROP info
+
 
 ## INTERFACES CONFIG ###########################################################
   - file: interfaces
     config:
       # ZONE:   INTERFACE  BROADCAST  OPTIONS
       - net:    eth0       detect     tcpflags,routefilter,nosmurfs,logmartians
-      - dock:   docker0    bridge
+      - dock:   docker0    detect     bridge
 
 ## ZONE CONFIG #################################################################
   - file: zones
