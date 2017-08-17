@@ -11,7 +11,7 @@
   version: v1.0.0
 
 - src: uZer.shorewall
-  version: v1.0.0
+  version: v1.0.1
 
 - src: uZer.snmpd
   version: v1.0.0
@@ -21,3 +21,6 @@
 
 - src: dev-sec.ssh-hardening
   version: 4.3.0
+
+- src: uZer.install-docker
+  version: v1.0.1

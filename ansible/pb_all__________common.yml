@@ -17,15 +17,17 @@
     - uZer.timedate
     - uZer.snmpd
     - uZer.packages
+    - uZer.install-docker
     - role: dev-sec.ssh-hardening
       tags:
         - ssh
         - hardening
 
-- name: Deploy firwall configurations
+- name: Deploy firewall configurations
   hosts: hosting
   gather_facts: yes
   become: yes
   roles:
     - uZer.shorewall
+
 # vim:ft=ansible:

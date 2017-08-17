@@ -1,6 +1,8 @@
 ---
 # Shorewall configuration
-manala_shorewall_config: {}
+has_docker: yes
+manala_shorewall_config:
+  DOCKER: 'Yes'
   # IP_FORWARDING: 'On'
 
 manala_shorewall_configs:
@@ -8,19 +10,24 @@ manala_shorewall_configs:
   - file: policy
     config:
       # From Firewall
-      - $FW: all   DROP
+      - $FW:  all   DROP
 
       # From Internet
-      - net: all   DROP
+      - net:  all   DROP
 
       # Default
-      - all: all   DROP info
+      - all:  all   DROP info
+
+      # From Docker
+      - dock: $FW   REJECT
+      - dock: all   ACCEPT
 
 ## INTERFACES CONFIG ###########################################################
   - file: interfaces
     config:
       # ZONE:   INTERFACE  BROADCAST  OPTIONS
       - net:    eth0       detect     tcpflags,routefilter,nosmurfs,logmartians
+      - dock:   docker0    bridge
 
 ## ZONE CONFIG #################################################################
   - file: zones
@@ -28,6 +35,7 @@ manala_shorewall_configs:
       # ZONE:   TYPE       OPTIONS    IN         OUT
       - fw:     firewall
       - net:    ipv4
+      - dock:   ipv4
 
 ## FIREWALL RULES ##############################################################
   - file: rules
@@ -42,4 +50,5 @@ manala_shorewall_configs:
       - ACCEPT: net                           fw          icmp
       - ACCEPT: net                           fw          tcp   22
       - ACCEPT: net                           fw          icmp
+
 # vim:ft=ansible:
