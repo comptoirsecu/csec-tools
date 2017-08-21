@@ -5,7 +5,7 @@ rancher_master_public_ip: 'rancher.comptoirsecu.fr'
 rancher_master_public_port: '443'
 rancher_master_public_proto: 'https'
 
-rancher_master_local_ip: '{{ ansible_default_ipv4.address }}'
+rancher_master_local_ip: '127.0.0.1'
 rancher_master_local_port: '8080'
 rancher_master_local_proto: 'http'
 

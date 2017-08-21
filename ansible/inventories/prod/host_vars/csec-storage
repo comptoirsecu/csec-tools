@@ -43,6 +43,10 @@ manala_shorewall_configs:
   - file: rules
     config:
       # ACTION: SOURCE                        DEST        PROTO PORT (SPORT) (ORIGDEST)
+      - ACCEPT: dock                          net         tcp   8080
+      - ACCEPT: dock                          net         udp   500,4500
+      - ACCEPT: dock                          fw          tcp   8080
+      - ACCEPT: dock                          fw          udp   500,4500
       # fw -> net
       - ACCEPT: fw                            net         tcp   22,53,80,443
       - ACCEPT: fw                            net         udp   53,123

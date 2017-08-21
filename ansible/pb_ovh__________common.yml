@@ -197,6 +197,7 @@
         - docker
         - rancher
         - master
+        - agent
 
     - include_vars: "{{ inventory_dir }}/group_vars/all/apikey.yml"
 
@@ -213,6 +214,7 @@
         - docker
         - rancher
         - master
+        - agent
 
     - name: Return the registration token URL of Rancher server
       uri:
@@ -227,6 +229,7 @@
         - docker
         - rancher
         - master
+        - agent
 
     - set_fact:
         _rtoken: "{{ rancher_token_url.json['data'][0]['token'] }}"
@@ -235,6 +238,7 @@
         - docker
         - rancher
         - master
+        - agent
 
     - name: Create docker agent container
       docker_container:
@@ -248,11 +252,12 @@
           - /var/lib/rancher:/var/lib/rancher
         command: "{{ rancher_master_local_url }}/v1/scripts/{{ _rtoken }}"
         env:
-          CATTLE_AGENT_IP: "{{ ansible_default_ipv4.address }}"
+          CATTLE_AGENT_IP: "127.0.0.1"
       when: "'rancher-agent' not in _containerlist.stdout"
       become: yes
       tags:
         - docker
+        - agent
         - rancher
         - master
 
