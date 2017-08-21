@@ -1,5 +1,6 @@
 ---
 # Shorewall configuration
+is_first_rancher_master: yes
 has_docker: yes
 manala_shorewall_config:
   DOCKER: 'Yes'
@@ -47,9 +48,9 @@ manala_shorewall_configs:
       - ACCEPT: fw                            net         udp   53,123
 
       # net -> fw
-      - ACCEPT: net                           fw          tcp   22
+      - ACCEPT: net                           fw          tcp   22,8080
       - ACCEPT: net                           fw          icmp
-      - ACCEPT: net                           fw          tcp   22
+      - ACCEPT: net                           fw          tcp   22,8080
       - ACCEPT: net                           fw          icmp
 
 # vim:ft=ansible:

@@ -1,12 +1,12 @@
-csec-ansible-pb
-====================
+csec-ansible
+============
 
 This projet contains the infrastructure configuration layer of CSEC servers.
 In these playbooks, we configure:
 
 - users
 - ssh public keys
-- sudoser
+- sudoers
 - dns
 - hosts file
 - ntp
